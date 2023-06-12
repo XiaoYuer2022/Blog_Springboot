@@ -1,0 +1,7 @@
+[Unit]
+Description=python images download program
+[Service]
+Type=forking
+ExecStart=/usr/bin/sh /www/wwwroot/image.haoxx.top/public/startdownload.sh
+[Install]
+WantedBy=multi-user.target
