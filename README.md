@@ -1,4 +1,7 @@
 # 部署文档
+
+## 基础部署文档
+
 参考 [原博主的部署教程](https://www.ttkwsd.top/article/59)
 
 1、安装docker
@@ -340,8 +343,34 @@ networks:
 ```
 
 
+## 数据备份
 
+将第一次配置好的所有文件都从服务器里面打包拷贝下来了，放在了`云服务器上的数据`目录中。
 
+## 修改docker下的MySql的端口号和密码
+
+今天2023/06/12，我的MySQL服务器被攻击了，所以为了保证数据安全，需要将MySQL的对外影响端口修改，并设置安全性更高的密码。
+
+1) MySQL密码的修改：修改与docker-compose.yml同目录下的隐藏文件`.env`中MySQL和Redis的密码；
+
+2) 修改springboot下的配置文件，MySQL的密码、Redis的密码还有MySQL的端口号；
+
+3）修改docker-compose.yml中MySQL的配置，修改端口号为3380；
+
+4）在启动MySQL容器后，使用`docker cp mysql:/etc/mysql/my.cnf .`将配置文件拷贝出来，然后添加`port=3380`字段：
+```bash
+[mysqld]
+port=3380
+pid-file        = /var/run/mysqld/mysqld.pid
+socket          = /var/run/mysqld/mysqld.sock
+datadir         = /var/lib/mysql
+secure-file-priv= NULL
+```
+5) 故技重施，`docker cp my.cnf mysql:/etc/mysql/my.cnf`重新覆盖配置文件，然后`docker restart mysql`就可以了。
+
+6） 给搞忘了，还有在canal目录下的instance.properties文件，修改MySQL的IP、端口号、账户名和密码。不过这个容器并未使用。
+
+7）补充说明：检查服务器端口能否正常使用：使用telnet工具：`telnet  服务器IP 端口号`
 
 
 
