@@ -1,6 +1,6 @@
 package com.ican.config;
 
-import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.amqp.core.*;
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.amqp.support.converter.MessageConverter;
@@ -9,12 +9,13 @@ import org.springframework.context.annotation.Configuration;
 
 import static com.ican.constant.MqConstant.*;
 
+
 /**
  * RabbitMQ配置
  *
  * @author ican
  **/
-@Slf4j
+
 @Configuration
 public class RabbitMqConfig {
 

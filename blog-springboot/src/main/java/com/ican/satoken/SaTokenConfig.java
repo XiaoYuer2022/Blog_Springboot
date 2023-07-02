@@ -1,6 +1,6 @@
 package com.ican.satoken;
 
-import cn.dev33.satoken.SaManager;
+
 import cn.dev33.satoken.context.SaHolder;
 import cn.dev33.satoken.exception.NotLoginException;
 import cn.dev33.satoken.filter.SaServletFilter;

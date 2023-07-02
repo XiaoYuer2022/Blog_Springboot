@@ -19,7 +19,6 @@ import java.util.Objects;
 
 import static com.ican.constant.CommonConstant.FALSE;
 import static com.ican.constant.RedisConstant.SITE_SETTING;
-import static com.ican.enums.FilePathEnum.ARTICLE;
 import static com.ican.enums.FilePathEnum.CONFIG;
 
 /**

@@ -1,6 +1,6 @@
 package com.ican.service;
 
-import com.ican.entity.Article;
+
 import com.ican.model.vo.ArticleSearchVO;
 
 /**

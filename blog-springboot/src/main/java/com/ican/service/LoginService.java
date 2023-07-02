@@ -1,10 +1,8 @@
 package com.ican.service;
 
-import com.ican.model.dto.GitDTO;
-import com.ican.model.dto.LoginDTO;
-import com.ican.model.dto.QqLoginDTO;
-import com.ican.model.dto.RegisterDTO;
 
+import com.ican.model.dto.LoginDTO;
+import com.ican.model.dto.RegisterDTO;
 import com.ican.model.dto.CodeDTO;
 /**
  * 登录业务接口
