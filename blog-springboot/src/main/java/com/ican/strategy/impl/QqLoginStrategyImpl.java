@@ -115,13 +115,10 @@ public class QqLoginStrategyImpl extends AbstractLoginStrategyImpl {
     /**
      * 获取用户的OpenId
      *
+     * @param accessToken 上一个函数的返回值
      * @return 用户的OpenId
      */
     private String getUserOpenId(String accessToken) {
-        Map<String, String> dataMap = new HashMap<>(2);
-        // 请求参数
-        dataMap.put(ACCESS_TOKEN, accessToken);
-        dataMap.put(FMT, "json");
         String getQqOpenIdUrl = "https://graph.qq.com/oauth2.0/me?access_token="+accessToken
                 + "&fmt="+"json";
         // 返回用户OpenId

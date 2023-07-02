@@ -18,8 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ican.model.dto.CodeDTO;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 /**
  * 登录控制器
  *
