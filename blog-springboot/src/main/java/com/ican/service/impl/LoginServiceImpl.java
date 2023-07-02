@@ -32,6 +32,9 @@ import static com.ican.enums.LoginTypeEnum.EMAIL;
 import static com.ican.enums.RoleEnum.USER;
 import static com.ican.utils.CommonUtils.checkEmail;
 
+
+import com.ican.model.dto.CodeDTO;
+
 /**
  * 登录业务接口实现类
  *
@@ -40,7 +43,6 @@ import static com.ican.utils.CommonUtils.checkEmail;
  **/
 @Service
 public class LoginServiceImpl implements LoginService {
-
     @Autowired
     private UserMapper userMapper;
 
@@ -116,20 +118,20 @@ public class LoginServiceImpl implements LoginService {
 
     @Transactional(rollbackFor = Exception.class)
     @Override
-    public String giteeLogin(GitDTO data) {
-        return socialLoginStrategyContext.executeLoginStrategy(JSON.toJSONString(data), LoginTypeEnum.GITEE);
+    public String giteeLogin(CodeDTO data) {
+        return socialLoginStrategyContext.executeLoginStrategy(data, LoginTypeEnum.GITEE);
     }
 
     @Transactional(rollbackFor = Exception.class)
     @Override
-    public String githubLogin(GitDTO data) {
-        return socialLoginStrategyContext.executeLoginStrategy(JSON.toJSONString(data), LoginTypeEnum.GITHUB);
+    public String githubLogin(CodeDTO data) {
+        return socialLoginStrategyContext.executeLoginStrategy(data, LoginTypeEnum.GITHUB);
     }
 
     @Transactional(rollbackFor = Exception.class)
     @Override
-    public String qqLogin(QqLoginDTO qqLogin) {
-        return socialLoginStrategyContext.executeLoginStrategy(JSON.toJSONString(qqLogin), LoginTypeEnum.QQ);
+    public String qqLogin(CodeDTO data) {
+        return socialLoginStrategyContext.executeLoginStrategy(data, LoginTypeEnum.QQ);
     }
 
     /**

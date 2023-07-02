@@ -191,6 +191,11 @@ oauth:
     access-token-url: https://github.com/login/oauth/access_token
     user-info-url: https://api.github.com/user
   qq:
-    app-id: 102054732
+    app-id: 102053757
+    app-key: GRQBl9JH1XpuoVyD
+    grant_type: authorization_code
+    redirect-url: https://haoxx.site/oauth/login/qq
+    access-token-url: https://graph.qq.com/oauth2.0/token
+    user-openid-url: https://graph.qq.com/oauth2.0/me
+    user-info-url: https://graph.qq.com/user/get_user_info?access_token={access_token}&oauth_consumer_key={oauth_consumer_key}&openid={openid}
     check-token-url: https://graph.qq.com/oauth2.0/me?access_token={access_token}
-    user-info-url: https://graph.qq.com/user/get_user_info?openid={openid}&access_token={access_token}&oauth_consumer_key={oauth_consumer_key}

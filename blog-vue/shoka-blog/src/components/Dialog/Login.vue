@@ -50,16 +50,31 @@ const handleForget = () => {
   app.setLoginFlag(false);
   app.setForgetFlag(true);
 };
+// const qqLogin = () => {
+//   //保留当前路径
+//   user.savePath(route.path);
+//   app.setLoginFlag(false);
+//   window.open(
+//     "https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id="+
+//     config.QQ_APP_ID +
+//     "&redirect_uri="+
+//     encodeURIComponent(config.QQ_REDIRECT_URL) +
+//     "&scope=scope" +
+//     "&display=display",
+//     "_self"
+//   );
+// };
 const qqLogin = () => {
   //保留当前路径
   user.savePath(route.path);
   app.setLoginFlag(false);
   window.open(
-    "https://graph.qq.com/oauth2.0/show?which=Login&response_type=code&redirect_uri="+
-    encodeURIComponent(config.QQ_REDIRECT_URL) +
-    "&scope=get_user_info&client_id=" +
+    "https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id="+
     config.QQ_APP_ID +
-    "&display=None&state=KcwHuDHJ_pc",
+    "&redirect_uri="+
+    config.QQ_REDIRECT_URL +
+    "&scope=scope" +
+    "&display=display",
     "_self"
   );
 };

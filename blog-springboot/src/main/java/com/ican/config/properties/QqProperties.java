@@ -20,13 +20,37 @@ public class QqProperties {
     private String appId;
 
     /**
-     * 校验token地址
+     * QQ app key
      */
-    private String checkTokenUrl;
+    private String appKey;
 
     /**
-     * QQ用户信息地址
+     * grant-type  就是：authorization_code
+     */
+    private String grantType;
+
+    /**
+     * QQ回调域名
+     */
+    private String redirectUrl;
+
+    /**
+     * QQ访问令牌地址 (没用到)
+     */
+    private String accessTokenUrl;
+
+    /**
+     * QQ用户信息地址 (没用到)
+     */
+    private String userOpenIdUrl;
+
+    /**
+     * QQ用户信息地址 (没用到)
      */
     private String userInfoUrl;
 
+    /**
+     * QQ用户信息地址 (没用到)
+     */
+    private String checkTokenUrl;
 }

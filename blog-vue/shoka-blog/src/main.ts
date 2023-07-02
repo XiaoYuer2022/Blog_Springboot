@@ -5,6 +5,8 @@ import * as directive from "@/directive";
 import "@/permission";
 import router from "@/router";
 import { titleChange } from "@/utils/title";
+import VMdEditor from "@kangc/v-md-editor";
+import githubTheme from '@kangc/v-md-editor/lib/theme/github';
 import createKatexPlugin from "@kangc/v-md-editor/lib/plugins/katex/cdn";
 import createTodoListPlugin from "@kangc/v-md-editor/lib/plugins/todo-list/index";
 import "@kangc/v-md-editor/lib/plugins/todo-list/todo-list.css";
@@ -30,6 +32,7 @@ import lazyPlugin from "vue3-lazy";
 import App from "./App.vue";
 import error from "./assets/images/404.gif";
 import loading from "./assets/images/loading.gif";
+
 const app = createApp(App);
 Object.keys(directive).forEach((key) => {
   app.directive(key, (directive as { [key: string]: Directive })[key]);
@@ -50,6 +53,7 @@ app.use(lazyPlugin, {
   loading,
   error,
 });
+
 app.component("svg-icon", SvgIcon);
 app.mount("#app");
 titleChange();

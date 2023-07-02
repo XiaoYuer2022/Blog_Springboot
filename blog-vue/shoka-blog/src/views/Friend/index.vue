@@ -13,8 +13,9 @@
       </h2>
       <blockquote class="block">
         <p>名称：{{ blog.blogInfo.siteConfig.siteName }}</p>
-        <p>简介：{{ blog.blogInfo.siteConfig.siteIntro }}</p>
         <p>头像：{{ blog.blogInfo.siteConfig.authorAvatar }}</p>
+        <p>主页：{{ blog.blogInfo.siteConfig.siteAddress }}</p>
+        <p>简介：{{ blog.blogInfo.siteConfig.siteIntro }}</p>
       </blockquote>
       <h2>
         <svg-icon class="flower" icon-class="flower" size="1.25rem" color="pink"></svg-icon>
@@ -22,7 +23,7 @@
       </h2>
       <div class="welcome">需要交换友链的可在本页留言 (｡･∀･)ﾉﾞ</div>
       <blockquote class="block">
-        <p>出于信息需要,大佬你的信息格式要包含：网站名称、网站链接、头像链接、网站介绍、名称颜色</p>
+        <p>出于信息需要,大佬你的信息格式要包含：网站名称、名称颜色、头像链接、主页地址、网站简介</p>
       </blockquote>
       <h2>
         <svg-icon class="flower" icon-class="flower" size="1.25rem" color="pink"></svg-icon>

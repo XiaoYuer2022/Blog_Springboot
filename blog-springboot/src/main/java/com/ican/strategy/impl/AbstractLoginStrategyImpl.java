@@ -16,6 +16,8 @@ import java.util.Objects;
 
 import static com.ican.enums.RoleEnum.USER;
 
+import com.ican.model.dto.CodeDTO;
+
 /**
  * 抽象登录模板
  *
@@ -23,7 +25,6 @@ import static com.ican.enums.RoleEnum.USER;
  */
 @Service
 public abstract class AbstractLoginStrategyImpl implements SocialLoginStrategy {
-
     @Autowired
     private UserMapper userMapper;
 
@@ -31,7 +32,7 @@ public abstract class AbstractLoginStrategyImpl implements SocialLoginStrategy {
     private UserRoleMapper userRoleMapper;
 
     @Override
-    public String login(String data) {
+    public String login(CodeDTO data) {
         User user;
         // 获取token
         SocialTokenVO socialToken = getSocialToken(data);
@@ -61,7 +62,7 @@ public abstract class AbstractLoginStrategyImpl implements SocialLoginStrategy {
      * @param data data
      * @return {@link SocialTokenVO} 第三方token
      */
-    public abstract SocialTokenVO getSocialToken(String data);
+    public abstract SocialTokenVO getSocialToken(CodeDTO data);
 
     /**
      * 获取第三方用户信息

@@ -1,5 +1,5 @@
 <template>
-  <a href="https://github.com/ICAN1999/blog" target="_blank" class="github-corner" aria-label="View source on Github">
+  <a href="https://github.com/XiaoYuer2022/Blog_Springboot/tree/main" target="_blank" class="github-corner" aria-label="View source on Github">
     <svg
       width="80"
       height="80"

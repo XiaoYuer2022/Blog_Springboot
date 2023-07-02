@@ -3,9 +3,7 @@ package com.ican.controller;
 import cn.dev33.satoken.annotation.SaCheckLogin;
 import cn.dev33.satoken.stp.StpUtil;
 import com.ican.annotation.AccessLimit;
-import com.ican.model.dto.GitDTO;
 import com.ican.model.dto.LoginDTO;
-import com.ican.model.dto.QqLoginDTO;
 import com.ican.model.dto.RegisterDTO;
 import com.ican.model.vo.Result;
 import com.ican.service.LoginService;
@@ -18,6 +16,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ican.model.dto.CodeDTO;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 /**
  * 登录控制器
  *
@@ -26,7 +28,6 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(tags = "登录模块")
 @RestController
 public class LoginController {
-
     @Autowired
     private LoginService loginService;
 
@@ -87,7 +88,7 @@ public class LoginController {
      */
     @ApiOperation(value = "Gitee登录")
     @PostMapping("/oauth/gitee")
-    public Result<String> giteeLogin(@RequestBody GitDTO data) {
+    public Result<String> giteeLogin(@RequestBody CodeDTO data) {
         return Result.success(loginService.giteeLogin(data));
     }
 
@@ -99,20 +100,20 @@ public class LoginController {
      */
     @ApiOperation(value = "Github登录")
     @PostMapping("/oauth/github")
-    public Result<String> githubLogin(@RequestBody GitDTO data) {
+    public Result<String> githubLogin(@RequestBody CodeDTO data) {
         return Result.success(loginService.githubLogin(data));
     }
 
     /**
      * QQ登录
      *
-     * @param qqLogin QQ登录信息
+     * @param code QQ登录信息
      * @return {@link Result<String>} Token
      */
     @ApiOperation(value = "QQ登录")
     @PostMapping("/oauth/qq")
-    public Result<String> qqLogin(@Validated @RequestBody QqLoginDTO qqLogin) {
-        return Result.success(loginService.qqLogin(qqLogin));
+    public Result<String> qqLogin(@Validated @RequestBody CodeDTO code) {
+        return Result.success(loginService.qqLogin(code));
     }
 }
 

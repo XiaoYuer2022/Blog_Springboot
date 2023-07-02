@@ -1,0 +1,113 @@
+这个fireworks.min.js被blog的index.html调用，用来实现烟花效果
+
+
+
+https://graph.qq.com/oauth2.0/show?which=Login&response_type=code&redirect_uri=https%3A%2F%2Fhaoxx.site%2Foauth%2Flogin%2Fqq&scope=get_user_info&client_id=101468852&display=None&state=KcwHuDHJ_pc
+
+https://graph.qq.com/oauth2.0/authorize?response_type=code&redirect_uri=https%3A%2F%2Fhaoxx.site%2Foauth%2Flogin%2Fqq&scope=get_user_info&client_id=101468852&display=None&state=KcwHuDHJ_pc
+
+
+https://graph.qq.com/oauth2.0/authorize?response_type=token&client_id=102054732&redirect_uri=https%3A%2F%2Fhaoxx.site%2Foauth%2Flogin%2Fqq&scope=get_user_info
+
+
+APP ID：102053757
+APP Key：GRQBl9JH1XpuoVyD
+
+https://graph.qq.com/oauth2.0/authorize?response_type=token&client_id=102053757&redirect_uri=https%3A%2F%2Fhaoxx.site%2Foauth%2Flogin%2Fqq&scope=get_user_info
+
+
+第一步：获取code
+https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=102053757&redirect_uri=https%3A%2F%2Fhaoxx.site%2Foauth%2Flogin%2Fqq&scope=get_user_info
+按下F12进入调试模式，点击头像进行QQ登录后，得到code值
+第二步：获取access_token 
+https://graph.qq.com/oauth2.0/token?grant_type={grant_type}&client_id={appid}&client_secret={appkey}&code={code}&redirect_uri={uri}
+https://graph.qq.com/oauth2.0/token?grant_type=authorization_code&client_id=102053757&client_secret=GRQBl9JH1XpuoVyD&code=xxx&redirect_uri=https://haoxx.site/oauth/login/qq
+返回值为：（HTML显示content为html/text）
+access_token=377E38EEE3A4F8D526952B7173C04D55&expires_in=7776000&refresh_token=1C748A9B3003BC81236988F79B15ED0F
+第三步：用access_token去申请open-id
+https://graph.qq.com/oauth2.0/me?access_token=11111111111111111111111111111111&fmt=json
+返回值为：
+callback( {"client_id":"102053757","openid":"305F286E01D87A361D22A0C4814EE162"} );  或 {"client_id":"102053757","openid":"305F286E01D87A361D22A0C4814EE162"}
+第四步：有access_token、client_id(或称appid)、open-id来申请用户信息：
+https://graph.qq.com/user/get_user_info?access_token=11111111111111111111111111111111&oauth_consumer_key=101137684&openid=333333333333333333333333333
+返回值为：
+{
+    "ret": 0,
+    "msg": "",
+    "is_lost": 0,
+    "nickname": "小鱼儿",
+    "gender": "男",
+    "gender_type": 2,
+    "province": "广东",
+    "city": "深圳",
+    "year": "1990",
+    "constellation": "",
+    "figureurl": "http://qzapp.qlogo.cn/qzapp/102053757/305F286E01D87A361D22A0C4814EE162/30",
+    "figureurl_1": "http://qzapp.qlogo.cn/qzapp/102053757/305F286E01D87A361D22A0C4814EE162/50",
+    "figureurl_2": "http://qzapp.qlogo.cn/qzapp/102053757/305F286E01D87A361D22A0C4814EE162/100",
+    "figureurl_qq_1": "http://thirdqq.qlogo.cn/g?b=oidb&k=lmQqQbzAK6KwYrsT74pgew&kti=ZKBoGAAAAAA&s=40&t=1672902881",
+    "figureurl_qq_2": "http://thirdqq.qlogo.cn/g?b=oidb&k=lmQqQbzAK6KwYrsT74pgew&kti=ZKBoGAAAAAA&s=100&t=1672902881",
+    "figureurl_qq": "http://thirdqq.qlogo.cn/g?b=oidb&k=lmQqQbzAK6KwYrsT74pgew&kti=ZKBoGAAAAAA&s=640&t=1672902881",
+    "figureurl_type": "1",
+    "is_yellow_vip": "0",
+    "vip": "0",
+    "yellow_vip_level": "0",
+    "level": "0",
+    "is_yellow_year_vip": "0"
+}
+
+
+gitee登录·
+
+1、获取code  方法GET
+
+https://gitee.com/oauth/authorize?client_id={client_id}&redirect_uri={redirect_uri}&response_type=code&scope=user_info
+返回值：https://www.youyoushop.work/giteeCallback?code=1E83738E1231233B1224D9B3C
+
+2、获取access_token 方法POST
+https://gitee.com/oauth/token?grant_type=authorization_code&code={code}&client_id={client_id}&redirect_uri={redirect_uri}&client_secret={client_secret}
+返回值：
+access_token=FE04************CCE2&expires_in=7776000&refresh_token=88E4****************BE14
+实际返回值：（HTML显示content为json）
+{
+  "access_token": "f27b92c03de7e89a60584174a683670a",
+  "token_type": "bearer",
+  "expires_in": 86400,
+  "refresh_token": "87c02c92f8242bd4b8a3ee61a9a3f7c4bf90f03c1610fd5d3b40bd1ea33590cb",
+  "scope": "user_info",
+  "created_at": 1688284549
+}
+3、获取用户信息：GET
+https://gitee.com/api/v5/user?access_token=xxx
+返回值：
+{
+    "id": 9498238,
+    "login": "haoxxown",
+    "name": "HaoY",
+    "avatar_url": "https://foruda.gitee.com/avatar/1677177416257777920/9498238_yuhao1998_1642163960.png",
+    "url": "https://gitee.com/api/v5/users/haoxxown",
+    "html_url": "https://gitee.com/haoxxown",
+    "remark": "",
+    "followers_url": "https://gitee.com/api/v5/users/haoxxown/followers",
+    "following_url": "https://gitee.com/api/v5/users/haoxxown/following_url{/other_user}",
+    "gists_url": "https://gitee.com/api/v5/users/haoxxown/gists{/gist_id}",
+    "starred_url": "https://gitee.com/api/v5/users/haoxxown/starred{/owner}{/repo}",
+    "subscriptions_url": "https://gitee.com/api/v5/users/haoxxown/subscriptions",
+    "organizations_url": "https://gitee.com/api/v5/users/haoxxown/orgs",
+    "repos_url": "https://gitee.com/api/v5/users/haoxxown/repos",
+    "events_url": "https://gitee.com/api/v5/users/haoxxown/events{/privacy}",
+    "received_events_url": "https://gitee.com/api/v5/users/haoxxown/received_events",
+    "type": "User",
+    "blog": null,
+    "weibo": null,
+    "bio": "",
+    "public_repos": 0,
+    "public_gists": 0,
+    "followers": 0,
+    "following": 3,
+    "stared": 3,
+    "watched": 4,
+    "created_at": "2021-07-26T12:21:19+08:00",
+    "updated_at": "2023-07-02T15:24:29+08:00",
+    "email": "508506630@qq.com"
+}

@@ -9,7 +9,7 @@ export default {
   GITHUB_REDIRECT_URL: "https://haoxx.site/oauth/login/github",
 
   // github的client-id
-  QQ_APP_ID: "102054732",
+  QQ_APP_ID: "102053757",
     // github回调地址
   QQ_REDIRECT_URL: "https://haoxx.site/oauth/login/qq",
 };

@@ -23,7 +23,15 @@ onMounted(() => {
         if (data.flag) {
           // 设置Token
           setToken(data.data);
-          window.$message?.success("QQ登录成功");
+
+          // 获取用户信息
+           await user.GetUserInfo();
+          if (user.email === "") {
+            window.$message?.warning("请绑定邮箱以便及时收到回复");
+          } else {
+            window.$message?.success("QQ登录成功");
+          }
+          //window.$message?.success("QQ登录成功");
         } else {
           window.$message?.success("QQ登录失败");
         }
@@ -40,7 +48,7 @@ onMounted(() => {
           if (user.email === "") {
             window.$message?.warning("请绑定邮箱以便及时收到回复");
           } else {
-            window.$message?.success("登录成功");
+            window.$message?.success("Gitee登录成功");
           }
         }
       }
@@ -56,7 +64,7 @@ onMounted(() => {
           if (user.email === "") {
             window.$message?.warning("请绑定邮箱以便及时收到回复");
           } else {
-            window.$message?.success("登录成功");
+            window.$message?.success("GitHub登录成功");
           }
         }
       }

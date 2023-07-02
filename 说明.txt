@@ -1,7 +1,0 @@
-这个fireworks.min.js被blog的index.html调用，用来实现烟花效果
-
-
-
-https://graph.qq.com/oauth2.0/show?which=Login&response_type=code&redirect_uri=https%3A%2F%2Fhaoxx.site%2Foauth%2Flogin%2Fqq&scope=get_user_info&client_id=101468852&display=None&state=KcwHuDHJ_pc
-
-https://graph.qq.com/oauth2.0/authorize?response_type=code&redirect_uri=https%3A%2F%2Fhaoxx.site%2Foauth%2Flogin%2Fqq&scope=get_user_info&client_id=101468852&display=None&state=KcwHuDHJ_pc

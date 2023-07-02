@@ -1,5 +1,6 @@
 package com.ican.strategy;
 
+import com.ican.model.dto.CodeDTO;
 /**
  * 第三方登录策略
  *
@@ -13,5 +14,5 @@ public interface SocialLoginStrategy {
      * @param data data
      * @return {@link String} Token
      */
-    String login(String data);
+    String login(CodeDTO data);
 }

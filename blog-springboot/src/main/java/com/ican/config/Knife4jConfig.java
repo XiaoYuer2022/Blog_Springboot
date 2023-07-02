@@ -39,7 +39,7 @@ public class Knife4jConfig {
                 .title("博客API文档")
                 .description("基于SpringBoot + Vue开发的博客项目")
                 .termsOfServiceUrl("https://www.haoxx.site/api")
-                .contact(new Contact("小鱼", "https://github.com/ICAN1999", "1632167813@qq.com"))
+                .contact(new Contact("小鱼", "https://github.com/XiaoYuer2022", "508506630@qq.com"))
                 .version("2.0")
                 .build();
     }

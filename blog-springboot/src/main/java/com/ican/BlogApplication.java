@@ -15,6 +15,7 @@ import org.springframework.web.client.RestTemplate;
 public class BlogApplication {
 
     public static void main(String[] args) {
+        System.out.println("开始咯");
         SpringApplication.run(BlogApplication.class, args);
     }
 

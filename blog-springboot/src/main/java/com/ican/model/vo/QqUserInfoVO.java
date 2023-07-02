@@ -11,10 +11,11 @@ import lombok.Data;
 @Data
 public class QqUserInfoVO {
 
+
     /**
      * QQ头像
      */
-    private String figureurl_qq_1;
+    private String figureurl_qq;
 
     /**
      * 昵称

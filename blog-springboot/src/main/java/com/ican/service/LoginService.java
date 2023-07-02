@@ -5,6 +5,7 @@ import com.ican.model.dto.LoginDTO;
 import com.ican.model.dto.QqLoginDTO;
 import com.ican.model.dto.RegisterDTO;
 
+import com.ican.model.dto.CodeDTO;
 /**
  * 登录业务接口
  *
@@ -41,7 +42,7 @@ public interface LoginService {
      * @param data 第三方code
      * @return Token
      */
-    String giteeLogin(GitDTO data);
+    String giteeLogin(CodeDTO data);
 
     /**
      * Github登录
@@ -49,13 +50,13 @@ public interface LoginService {
      * @param data 第三方code
      * @return Token
      */
-    String githubLogin(GitDTO data);
+    String githubLogin(CodeDTO data);
 
     /**
      * QQ登录
      *
-     * @param qqLogin QQ登录信息
+     * @param code QQ登录信息
      * @return token
      */
-    String qqLogin(QqLoginDTO qqLogin);
+    String qqLogin(CodeDTO code);
 }

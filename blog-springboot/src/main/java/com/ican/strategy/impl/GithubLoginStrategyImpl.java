@@ -1,9 +1,7 @@
 package com.ican.strategy.impl;
 
-import com.alibaba.fastjson2.JSON;
 import com.ican.config.properties.GithubProperties;
 import com.ican.exception.ServiceException;
-import com.ican.model.dto.GitDTO;
 import com.ican.model.vo.GitUserInfoVO;
 import com.ican.model.vo.SocialTokenVO;
 import com.ican.model.vo.SocialUserInfoVO;
@@ -25,6 +23,7 @@ import java.util.Objects;
 import static com.ican.constant.SocialLoginConstant.*;
 import static com.ican.enums.LoginTypeEnum.GITHUB;
 
+import com.ican.model.dto.CodeDTO;
 /**
  * Github登录策略
  *
@@ -40,15 +39,14 @@ public class GithubLoginStrategyImpl extends AbstractLoginStrategyImpl {
     private RestTemplate restTemplate;
 
     @Override
-    public SocialTokenVO getSocialToken(String data) {
-        GitDTO gitDTO = JSON.parseObject(data, GitDTO.class);
-        // 获取Github的Token
-        TokenVO githubToken = getGithubToken(gitDTO.getCode());
-        // 返回Github的Token信息
-        return SocialTokenVO.builder()
-                .accessToken(githubToken.getAccess_token())
-                .loginType(GITHUB.getLoginType())
-                .build();
+    public SocialTokenVO getSocialToken(CodeDTO codeDTO) {
+     // 获取Github的Token
+     TokenVO githubToken = getGithubToken(codeDTO.getCode());
+     // 返回Github的Token信息
+     return SocialTokenVO.builder()
+             .accessToken(githubToken.getAccess_token())
+             .loginType(GITHUB.getLoginType())
+             .build();
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.ican.model.dto;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
@@ -17,8 +18,15 @@ public class QqLoginDTO {
      * openId
      */
     @NotBlank(message = "openId不能为空")
+    @ApiModelProperty(value = "openId")
     private String openId;
 
+    /**
+     * clientId
+     */
+    @ApiModelProperty(value = "clientId")
+    private String client_id;
+    
     /**
      * accessToken
      */

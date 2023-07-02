@@ -23,7 +23,7 @@
         </el-form>
         <!--  底部  -->
         <div class="el-login-footer">
-            <span>Copyright © 2022 - {{ new Date().getFullYear() }} By 阿冬</span>
+            <span>Copyright © 2022 - {{ new Date().getFullYear() }} By 小鱼</span>
         </div>
     </div>
 </template>
