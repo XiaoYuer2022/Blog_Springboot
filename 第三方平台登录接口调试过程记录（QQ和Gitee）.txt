@@ -1,3 +1,4 @@
+
 这个fireworks.min.js被blog的index.html调用，用来实现烟花效果
 
 

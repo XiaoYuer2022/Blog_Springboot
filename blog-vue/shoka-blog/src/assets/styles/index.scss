@@ -12,7 +12,7 @@
 }
 
 body {
-    cursor: url("../icons/mysetting.cur"), default;
+    //cursor: url("../icons/mysetting.cur"), default;
     background: var(--grey-0);
     color: var(--text-color);
     font-family: Mulish, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
@@ -24,7 +24,7 @@ body {
 a,
 button,
 img {
-    cursor: url("../icons/mysetting.cur"), default !important;
+    //cursor: url("../icons/mysetting.cur"), default !important;
 }
 
 h1,

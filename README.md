@@ -2,7 +2,6 @@
 
 ## 一、基础部署文档
 
-参考 [原博主的部署教程](https://www.ttkwsd.top/article/59)
 
 1、安装docker
 
