@@ -370,6 +370,23 @@ secure-file-priv= NULL
 
 7）补充说明：检查服务器端口能否正常使用：使用telnet工具：`telnet  服务器IP 端口号`
 
+进一步的补充说明：
+
+如果在docker-compose.yml中修改mysql的端口为：
+```yml
+ports:
+	- "3380:3380"
+```
+则需要额外步骤：修改容器内部的`/etc/mysql/my.cnf`，在[mysqld]中添加`port=3308`。
+
+当然，你可以只加载docker-compose.yml中修改mysql的端口为：
+```yml
+ports:
+	- "3380:3306"
+```
+
+这样就可以实现mysqld的端口号修改，而无需其他额外操作。
+
 
 
 ## 四、修复QQ登录(简单讲讲springboot+vue)
