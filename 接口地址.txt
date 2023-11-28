@@ -1,0 +1,77 @@
+https://www.haoxx.site/api/doc.html
+
+在apifox软件中进行api调试时需要注意：加上前缀https://www.haoxx.site/api
+比如，我想查看文章归档：/archives/list，就应该输入GET https://www.haoxx.site/api/archives/list
+
+返回：  200 OK
+
+{
+  "flag": true,
+  "code": 200,
+  "msg": "操作成功",
+  "data": {
+    "recordList": [
+      {
+        "id": 71,
+        "articleTitle": "全面内容综述",
+        "articleCover": "https://upload.haoxx.site/article/b6877ebd88b9d69396333c5769e07c05.jpg",
+        "createTime": "2023-06-07T16:32:56"
+      },
+      {
+        "id": 72,
+        "articleTitle": "C++方面的部分内容",
+        "articleCover": "https://upload.haoxx.site/article/b6190e63c3bcfef2223eb8c6318aaf19.jpg",
+        "createTime": "2023-06-07T16:34:52"
+      },
+      {
+        "id": 73,
+        "articleTitle": "C++复习总攻略",
+        "articleCover": "https://upload.haoxx.site/article/8a9d452db38f480ff6fc43806fe4f0df.jpg",
+        "createTime": "2023-06-07T16:35:31"
+      },
+      {
+        "id": 74,
+        "articleTitle": "C++关键字说明",
+        "articleCover": "https://upload.haoxx.site/article/04e39dc69be59749653fec847b165ae6.jpg",
+        "createTime": "2023-06-07T16:36:15"
+      },
+      {
+        "id": 75,
+        "articleTitle": "C++指针与常量知识点说明",
+        "articleCover": "https://upload.haoxx.site/article/fff0a6b83f952f7dd88c73d588b427ee.jpg",
+        "createTime": "2023-06-07T16:36:49"
+      },
+      {
+        "id": 76,
+        "articleTitle": "C/C++的比较",
+        "articleCover": "https://upload.haoxx.site/article/e16db2f6b4c568f36a1baa140b2e3b86.jpg",
+        "createTime": "2023-06-07T16:37:08"
+      },
+      {
+        "id": 77,
+        "articleTitle": "C/C++学习思路",
+        "articleCover": "https://upload.haoxx.site/article/015acc505d3ef69b0d459b85d2b4f990.jpg",
+        "createTime": "2023-06-07T16:37:36"
+      },
+      {
+        "id": 78,
+        "articleTitle": "C/C++字符串处理函数大汇总",
+        "articleCover": "https://upload.haoxx.site/article/ef2a97cea70aa44f3e7e7e4ac7c0a1ce.jpg",
+        "createTime": "2023-06-07T16:39:04"
+      },
+      {
+        "id": 79,
+        "articleTitle": "Python学习思路",
+        "articleCover": "https://upload.haoxx.site/article/79db75241acafdd2e58deb66960c3e25.jpg",
+        "createTime": "2023-06-07T16:39:33"
+      },
+      {
+        "id": 80,
+        "articleTitle": "C++参考资料",
+        "articleCover": "https://upload.haoxx.site/article/0068d29740a5335b046df54f0e7672aa.jpg",
+        "createTime": "2023-06-07T16:40:01"
+      }
+    ],
+    "count": 44
+  }
+}
