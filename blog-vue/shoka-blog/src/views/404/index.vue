@@ -19,7 +19,7 @@
 .notfound {
   width: 18.75rem;
   height: 22.625rem;
-  background: url(https://ican1999.github.io/images/404.png) no-repeat bottom;
+  background: url(https://upload.haoxx.site/config/3849b6b05035a2d3907958a19805fc90.jpg) no-repeat bottom;
   text-align: center;
   margin: 6.25rem auto;
 }

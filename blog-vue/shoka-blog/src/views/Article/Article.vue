@@ -37,7 +37,10 @@
     <div class="main-container" v-if="article">
       <div class="left-container" :class="app.sideFlag ? 'test' : ''">
         <div class="article-container">
+          
+          <!-- 将文章内容解析为md格式并显示： -->
           <v-md-preview ref="articleRef" class="md" v-viewer :text="article.articleContent"></v-md-preview>
+          <!-- <md-editor ref="editorRef" :value="article.articleContent" > </md-editor> -->  <!-- 这行代码，会让文章内容不显示 -->
           <div class="article-post">
             <div class="tag-share">
               <router-link :to="`/tag/${tag.id}`" class="article-tag" v-for="tag in article.tagVOList" :key="tag.id">

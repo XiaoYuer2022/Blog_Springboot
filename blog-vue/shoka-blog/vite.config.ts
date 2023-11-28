@@ -64,6 +64,7 @@ export default defineConfig({
     proxy: {
       "/api": {
         target: "https://haoxx.site/api/",
+        //target: "http://localhost:8080", 或者target: "http://49.235.66.77:8080",   //本地测试时，用这个
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
       },

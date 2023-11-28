@@ -49,6 +49,10 @@ import { getArticleList } from "@/api/article";
 import { Article } from "@/api/article/types";
 import { PageQuery } from "@/model";
 import { formatDate } from "@/utils/date";
+
+
+
+
 const data = reactive({
   count: 0,
   queryParams: {
@@ -73,6 +77,7 @@ onMounted(() => {
     count.value = data.data.count;
   });
 });
+
 </script>
 
 <style lang="scss" scoped>
