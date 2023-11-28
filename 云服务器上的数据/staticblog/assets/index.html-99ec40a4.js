@@ -1,0 +1,1 @@
+import{$ as e,a0 as t,a1 as n,a2 as c}from"./framework-e783454b.js";const o={},s=c("p",null,"测试一下",-1),_=[s];function a(r,l){return t(),n("div",null,_)}const i=e(o,[["render",a],["__file","index.html.vue"]]);export{i as default};

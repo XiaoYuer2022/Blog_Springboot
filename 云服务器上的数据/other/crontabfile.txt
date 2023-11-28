@@ -1,0 +1,5 @@
+//通过crontab -e 命令来打开工作表，然后插入：
+0  */1  * * *  /usr/local/backups/backup_mysql.sh 
+
+这个是用来定时备份mysql的数据的。
+

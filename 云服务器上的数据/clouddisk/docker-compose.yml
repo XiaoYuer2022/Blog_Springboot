@@ -1,0 +1,13 @@
+version: '3.3'
+services:
+    zfile:
+        container_name: zfile
+        restart: always
+        ports:
+            - '9000:8080'
+        volumes:
+            - '/usr/local/clouddisk/db:/root/.zfile-v4/db'
+            - '/usr/local/clouddisk/logs:/root/.zfile-v4/logs'
+            - '/usr/local/clouddisk/file:/data/file'
+            - '/usr/local/clouddisk/application.properties:/root/application.properties'
+        image: zhaojun1998/zfile
